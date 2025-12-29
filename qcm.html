@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QCM de Test</title>
+    <link rel="stylesheet" href="qcm.css">
+</head>
+<body>
+     <form id="QCM">
+        <p>1.quelle est la capitale du maroc?</p>
+        <input type="radio" name="q1" value="Marrakech" > Marrakech<br>
+        <input type="radio" name="q1" value="Rabat"> Rabat<br>
+        <input type="radio" name="q1" value="Tanger"> Tanger<br>
+        <input type="radio" name="q1" value="Midelt"> Midelt<br>
+        <p>2.quelle est la capitale du france?</p>
+        <input type="radio" name="q2" value="Paris" > Paris<br>
+        <input type="radio" name="q2" value="Lyon"> Lyon<br>
+        <input type="radio" name="q2" value="Lille"> Lille<br>
+        <input type="radio" name="q2" value="Marseille"> Marseille<br>
+        <p>3.Quels sont les avantages de lutilisation des energies renouvelables ? (Choix Multiple)</p>
+        <input type="checkbox" name="q3" value="Reduction des emissions de gaz a effet de serre">  Reduction des emissions de gaz a effet de serre<br>
+        <input type="checkbox" name="q3" value="Ressources inepuisables">  Ressources inepuisables<br>
+        <input type="checkbox" name="q3" value="Production de l electricite constante sans dependre du soleil ou du vent">  Production de l elctricite constante sans dependre du soleil ou du vent<br>
+        <input type="checkbox" name="q3" value="Diminution de la pollution de lair">  Diminution de la pollution de lair<br>
+        <p>4.Quels sont les elements naturels necessaires a la croissance dune plante ? (Choix Multiple)</p>
+        <input type="checkbox" name="q4" value="La lumiere du soleil">  La lumiere du soleil<br>
+        <input type="checkbox" name="q4" value="Le dioxyde de carbone">  Le dioxyde de carbone<br>
+        <input type="checkbox" name="q4" value="Un regime carnivore">  Un regime carnivore<br>
+        <input type="checkbox" name="q4" value="L eau et les nutriments du sol">  L eau et les nutriments du sol<br>
+        <p>5.Quelles villes sont capitales de leur pays respectif ? (Choix Multiple)</p>
+        <input type="checkbox" name="q5" value="Paris">  Paris<br>
+        <input type="checkbox" name="q5" value="Madrid">  Madrid<br>
+        <input type="checkbox" name="q5" value="Barcelone">  Barcelone<br>
+        <input type="checkbox" name="q5" value="Rome">  Rome<br>
+        </form>
+        <br><button type="button" onclick="resetQCM()">Initialiser le QCM</button>
+        <button type="button" onclick="afficherCorrige()">Afficher le corrige complet</button>
+        <button type="button" onclick="afficherResultat()">Afficher le résultat du test</button>
+         <script src="qcm.js"></script>
+
+</body>
+</html>
