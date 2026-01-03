@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Fonction trier()</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #a1c4fd, #c2e9fb);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 320px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 8px 20px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        p {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h3>Trier des nombres</h3>
+
+    <input type="text" id="nombres" placeholder="Ex: 5, 2, 9, 1">
+    <button onclick="trierNombres()">Trier</button>
+
+    <p id="resultat"></p>
+</div>
+
+<script>
+    function trier(tab) {
+        for (let i = 0; i < tab.length - 1; i++) {
+            for (let j = i + 1; j < tab.length; j++) {
+                if (tab[i] > tab[j]) {
+                    let temp = tab[i];
+                    tab[i] = tab[j];
+                    tab[j] = temp;
+                }
+            }
+        }
+        return tab;
+    }
+
+    function trierNombres() {
+        let saisie = document.getElementById("nombres").value;
+        let tableau = saisie.split(",").map(Number);
+
+        let tableauTrie = trier(tableau);
+
+        document.getElementById("resultat").textContent =
+            "Résultat : " + tableauTrie.join(", ");
+    }
+</script>
+
+</body>
+</html>
