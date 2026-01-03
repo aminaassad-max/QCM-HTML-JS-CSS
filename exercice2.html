@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Validation Email</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #89f7fe, #66a6ff);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 320px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 8px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #message {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Vérification Email</h2>
+
+    <input type="text" id="email" placeholder="Entrer votre email">
+    <br>
+    <button onclick="verifierEmail()">Vérifier</button>
+
+    <p id="message"></p>
+</div>
+
+<!-- ===== JavaScript ===== -->
+<script>
+    function verifierEmail() {
+        let email = document.getElementById("email").value;
+        let message = document.getElementById("message");
+
+        // Vérifie : lettre/chiffre avant @, @ obligatoire, point après @
+        let regex = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]+$/;
+
+        if (regex.test(email)) {
+            message.style.color = "green";
+            message.textContent = "Email valide ";
+        } else {
+            message.style.color = "red";
+            message.textContent = "Email invalide ";
+        }
+    }
+</script>
+
+</body>
+</html>
