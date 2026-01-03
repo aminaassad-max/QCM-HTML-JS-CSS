@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Somme de temps</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        .bloc {
+            margin-bottom: 15px;
+        }
+        input {
+            width: 70px;
+            padding: 5px;
+            margin: 5px;
+        }
+        button {
+            padding: 8px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .result input {
+            background: #e8f0fe;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Somme de trois mesures de temps</h2>
+
+<div class="bloc">
+    <strong>Premier temps :</strong><br>
+    Heure <input id="h1" type="number">
+    Minute <input id="m1" type="number">
+    Seconde <input id="s1" type="number">
+</div>
+
+<div class="bloc">
+    <strong>Deuxième temps :</strong><br>
+    Heure <input id="h2" type="number">
+    Minute <input id="m2" type="number">
+    Seconde <input id="s2" type="number">
+</div>
+
+<div class="bloc">
+    <strong>Troisième temps :</strong><br>
+    Heure <input id="h3" type="number">
+    Minute <input id="m3" type="number">
+    Seconde <input id="s3" type="number">
+</div>
+
+<button onclick="calculer()">Somme</button>
+<button onclick="effacer()">Effacer</button>
+
+<hr>
+
+<div class="bloc result">
+    <strong>Total :</strong><br>
+    Jour <input id="j" readonly>
+    Heure <input id="h" readonly>
+    Minute <input id="m" readonly>
+    Seconde <input id="s" readonly>
+</div>
+
+<script>
+function calculer() {
+
+    let totalSecondes =
+        (+h1.value * 3600 + +m1.value * 60 + +s1.value) +
+        (+h2.value * 3600 + +m2.value * 60 + +s2.value) +
+        (+h3.value * 3600 + +m3.value * 60 + +s3.value);
+
+
+    let jours = Math.floor(totalSecondes / 86400);
+    totalSecondes %= 86400;
+
+    let heures = Math.floor(totalSecondes / 3600);
+    totalSecondes %= 3600;
+
+    let minutes = Math.floor(totalSecondes / 60);
+    let secondes = totalSecondes % 60;
+
+    j.value = jours;
+    h.value = heures;
+    m.value = minutes;
+    s.value = secondes;
+}
+
+function effacer() {
+    document.querySelectorAll("input").forEach(input => input.value = "");
+}
+</script>
+
+</body>
+</html>
